@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	margin: 9vh 5vw;
+}
+
+.emailDiv, .passwordDiv {
+	margin: 1.5em;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
