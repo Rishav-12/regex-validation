@@ -4,10 +4,12 @@ const emailInfo = document.querySelector(".emailInfo");
 const passwordInput = document.querySelector(".password");
 const passwordInfo = document.querySelector(".passwordInfo");
 
-emailInput.addEventListener('input', () => {
-	const regex1 = /^\w+\.?\w+?@\w+\.(com|org|net|edu)$/;
+const regexEmail = /^\w+\.?\w+?@\w+\.(com|org|net|edu)$/;
+const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*\-_+=?]).{8,}$/;
 
-	if(regex1.test(emailInput.value)){
+emailInput.addEventListener('input', () => {
+
+	if(regexEmail.test(emailInput.value)){
 		emailInfo.textContent = "Email Address is valid";
 		emailInfo.classList.remove('red');
 		emailInfo.classList.add('green');
@@ -20,9 +22,8 @@ emailInput.addEventListener('input', () => {
 });
 
 passwordInput.addEventListener('input', () => {
-	const regex2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*\-_+=?]).{8,}$/;
 
-	if(regex2.test(passwordInput.value)){
+	if(regexPassword.test(passwordInput.value)){
 		passwordInfo.textContent = "Strong Password";
 		passwordInfo.classList.remove('red');
 		passwordInfo.classList.add('green');
